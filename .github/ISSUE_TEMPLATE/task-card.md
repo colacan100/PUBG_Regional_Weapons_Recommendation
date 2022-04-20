@@ -9,7 +9,7 @@ assignees: colacan100
 
 ## Task Card
 
-""Assignee** : 박성우
+**Assignee** : 박성우
 
 #### Job Description
 
