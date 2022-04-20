@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body class="p-3 mb-2 bg-secondary text-white">
+    <div class="text-center" style="float: none; margin: 10px auto;">
+        <a id="weapon" href="http://15.164.89.222:5000/"><img src={{ url_for('static', filename='pubg.jpg' ) }}></a>
+    </div>
+    <div class="container row" style="float: none; margin: 10px auto;">
+        <div class="col-md-3" style="float: none; margin: 0px auto;">
+            <blockquote class="blockquote text-center">
+                <p class="font-weight-bold p-3 mb-2 bg-dark text-white rounded"><strong>Weapon for your Chicken</strong>
+                </p>
+            </blockquote>
+            <select class="form-select" id="select1">
+                <option value="Default">맵 선택</option>
+                <option value="erangel">에란겔</option>
+                <option value="miramar">미라마</option>
+                <option value="teigo">태이고</option>
+            </select>
+            <select class="form-select" style="margin:10px auto;" id="select2">
+                <option>지역 선택</option>
+            </select>
+            <div class="container row" style="float: none; margin: 10px auto;">
+                <button type="button" onclick="cssChange()" class="btn btn-dark" id="button">Click</button>
+            </div>
+        </div>
+        <p class="text-center font-weight-bold text-white rounded"><strong>{{name_weapon}}</strong></p>
+        <div class="text-center">
+            <a id="weapon" href="https://pubg.op.gg/weapons/{{title_weapon}}/statistics" style="visibility:hidden"><img src={{ url_for('static',
+                    filename='to_go.jpg' ) }}></a>
+        </div>
+    </div>
+</body>
+<script>
+    $("#select1").change(function () {
+        switch (this.value) {
+            case 'erangel':
+                $("#select2").children().remove();
+
+                $("#select2").append("<option value='field1-bar1'>지역 선택</option>");
+                $("#select2").append("<option value='zharki'>자르키</option>");
+                $("#select2").append("<option value='georgopol'>게오르고폴</option>");
+                $("#select2").append("<option value='hospital'>병원</option>");
+                $("#select2").append("<option value='primorsk'>프리모스크</option>");
+                $("#select2").append("<option value='quarry'>채석장</option>");
+                $("#select2").append("<option value='gatka'>갓카</option>");
+                $("#select2").append("<option value='ferrypier'>부두</option>");
+                $("#select2").append("<option value='severny'>세베르니</option>");
+                $("#select2").append("<option value='shootingrange'>사격장</option>");
+                $("#select2").append("<option value='rozhok'>로족</option>");
+                $("#select2").append("<option value='pochinki'>포친키</option>");
+                $("#select2").append("<option value='ruins'>유적</option>");
+                $("#select2").append("<option value='school'>학교</option>");
+                $("#select2").append("<option value='stalber'>스탈베르</option>");
+                $("#select2").append("<option value='yasnayapolyana'>야스나야 폴야나</option>");
+                $("#select2").append("<option value='shelter'>대피소</option>");
+                $("#select2").append("<option value='mylta'>밀타</option>");
+                $("#select2").append("<option value='farm'>농장</option>");
+                $("#select2").append("<option value='kameshki'>카메시키</option>");
+                $("#select2").append("<option value='mansion'>저택</option>");
+                $("#select2").append("<option value='lipovka'>리포브카</option>");
+                $("#select2").append("<option value='prison'>감옥</option>");
+                $("#select2").append("<option value='myltapower'>밀타 발전소</option>");
+                $("#select2").append("<option value='sosnovkamilitarybase'>소스노브카 군사기지</option>");
+                $("#select2").append("<option value='novorepnoye'>노보레프노예</option>");
+                break;
+            case 'miramar':
+                $("#select2").children().remove();
+
+                $("#select2").append("<option value='field2-bar1'>지역 선택</option>");
+                $("#select2").append("<option value='alcantara'>알칸타라</option>");
+                $("#select2").append("<option value='ruins'>유적</option>");
+                $("#select2").append("<option value='trailerpark'>트레일러 주차장</option>");
+                $("#select2").append("<option value='elpozo'>엘 포소</option>");
+                $("#select2").append("<option value='ladrillera'>라드리예라</option>");
+                $("#select2").append("<option value='valledelmar'>바예 델 마르</option>");
+                $("#select2").append("<option value='lacobreria'>라 코브레리아</option>");
+                $("#select2").append("<option value='craterfields'>크레이터 들판</option>");
+                $("#select2").append("<option value='montenuevo'>몬테 누에보</option>");
+                $("#select2").append("<option value='chumacera'>추마세라</option>");
+                $("#select2").append("<option value='sanmartin'>산 마르틴</option>");
+                $("#select2").append("<option value='powergrid'>전력망</option>");
+                $("#select2").append("<option value='pecado'>페카도</option>");
+                $("#select2").append("<option value='watertreatment'>정수장</option>");
+                $("#select2").append("<option value='haciendadelpatron'>아시엔다 델 파트론</option>");
+                $("#select2").append("<option value='graveyard'>공동묘지</option>");
+                $("#select2").append("<option value='losleones'>로스 레오네스</option>");
+                $("#select2").append("<option value='torreahumada'>토레 아우마다</option>");
+                $("#select2").append("<option value='cruzdelvalle'>크루스 델 바예</option>");
+                $("#select2").append("<option value='minasgenerales'>미나스 헤네랄레스</option>");
+                $("#select2").append("<option value='junkyard'>폐차장</option>");
+                $("#select2").append("<option value='labendita'>라 벤디타</option>");
+                $("#select2").append("<option value='campomilitar'>캄포 밀리타르</option>");
+                $("#select2").append("<option value='tierrabronca'>티에라 브롱카</option>");
+                $("#select2").append("<option value='elazahar'>엘 아사아르</option>");
+                $("#select2").append("<option value='lmpala'>임팔라</option>");
+                $("#select2").append("<option value='puertoparaiso'>푸에르토 파라이소</option>");
+                $("#select2").append("<option value='prison'>감옥</option>");
+                $("#select2").append("<option value='minasdelsur'>미나스 델 수르</option>");
+                $("#select2").append("<option value='loshigos'>로스 이고스</option>");
+                break;
+
+            case 'teigo':
+                $("#select2").children().remove();
+
+                $("#select2").append("<option value='field3-bar1'>지역 선택</option>");
+                $("#select2").append("<option value='kangneung'>강능</option>");
+                $("#select2").append("<option value='hosan'>호산</option>");
+                $("#select2").append("<option value='hosanprison'>호산교도소</option>");
+                $("#select2").append("<option value='haemoosa'>해무사</option>");
+                $("#select2").append("<option value='hapo'>하포</option>");
+                $("#select2").append("<option value='songam'>송암</option>");
+                $("#select2").append("<option value='ohyang'>오향</option>");
+                $("#select2").append("<option value='buksansa'>북산사</option>");
+                $("#select2").append("<option value='godok'>고덕</option>");
+                $("#select2").append("<option value='wolsong'>월송</option>");
+                $("#select2").append("<option value='yongcheon'>용천</option>");
+                $("#select2").append("<option value='palace'>고궁</option>");
+                $("#select2").append("<option value='terminal'>터미널</option>");
+                $("#select2").append("<option value='shipyard'>조선소</option>");
+                $("#select2").append("<option value='school'>학교</option>");
+                $("#select2").append("<option value='studio'>스튜디오</option>");
+                $("#select2").append("<option value='fishingcamp'>낚시터</option>");
+                $("#select2").append("<option value='airport'>공항</option>");
+                $("#select2").append("<option value='armybase'>군부대</option>");
+                break;
+            default:
+                $("#select2").append("<option value='field3-bar3'></option>");
+        }
+    });
+</script>
+<script>
+    $("#button").on("click", function () {
+        let url = "http://15.164.89.222:5000/" + $("#select1").val() + "/" + $("#select2").val();
+        window.location.href = url;
+    })
+</script>
+</html>
