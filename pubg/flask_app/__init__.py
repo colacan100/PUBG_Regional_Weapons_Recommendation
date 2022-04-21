@@ -41,17 +41,17 @@ def out_weap(name):
 @app.route('/erangel/<zone>',methods=['GET'])
 def erangel(zone):
     e = for_recommend(zone,no_sup_item_ids,model_e)
-    return render_template('pubg_web2.html', title = e,title_weapon = out_c(e),name_weapon = out_weap(e))
+    return render_template('pubg_web2.html', title = e,title_weapon = out_c(e),name_weapon = '추천무기는 ' + out_weap(e) + ' 입니다.')
 
 @app.route('/miramar/<zone>',methods=['GET'])
 def miramar(zone):
     m = for_recommend(zone,no_sup_item_ids,model_m)
-    return render_template('pubg_web2.html', title = m,title_weapon = out_c(m),name_weapon = out_weap(m))
+    return render_template('pubg_web2.html', title = m,title_weapon = out_c(m),name_weapon = '추천무기는 ' + out_weap(m) + ' 입니다.')
 
 @app.route('/teigo/<zone>',methods=['GET'])
 def teigo(zone):
     t = for_recommend(zone,no_sup_item_ids,model_t)
-    return render_template('pubg_web2.html', title = t,title_weapon = out_c(t),name_weapon = out_weap(t))
+    return render_template('pubg_web2.html', title = t,title_weapon = out_c(t),name_weapon = '추천무기는 ' + out_weap(t) + ' 입니다.')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
